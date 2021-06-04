@@ -20,7 +20,7 @@ class NewportXPSMotorController(MotorController):
     timeOut = 5000
 	
     def __init__(self, inst, props, *args, **kwargs):
-        super(NewportXPSController, self).__init__(
+        super(NewportXPSMotorController, self).__init__(
             inst, props, *args, **kwargs)
 
         # initialize hardware communication
@@ -33,7 +33,7 @@ class NewportXPSMotorController(MotorController):
         
         # do some initialization
         self._motors = {}
-        self._target = {}
+        #self._target = {}
         self._threshold = 0.01
         
 
@@ -45,7 +45,7 @@ class NewportXPSMotorController(MotorController):
         
     def DeleteDevice(self, axis):
         del self._motors[axis]
-        del self._target[axis]
+        #del self._target[axis]
 
     StateMap = {
         1: State.On,
